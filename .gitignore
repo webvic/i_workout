@@ -7,7 +7,14 @@
 # Не игнорировать файлы .py
 !*.py
 
-# Не игнорировать файлы .csv
+# Не игнорировать файлы .py
 !*.csv
+
+# Не игнорировать файл requirements.txt
+!requirements.txt
+
+# Не игнорировать файл requirements.txt
+!.gitignore
+
 
 my_env/
