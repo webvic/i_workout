@@ -2,15 +2,11 @@
 ################# Модуль вычисления близости между рядами #####################
 
 import os
+from cv2 import distanceTransformWithLabels
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
-from fastdtw import fastdtw
-from scipy.spatial.distance import euclidean
-
-def dtw(series_1, series_2, dist=euclidean):
-    distance, _ = fastdtw(series_1, series_2, dist=dist)
-    return distance
+from tslearn.metrics import dtw
 
 from service_functions import BODY, KEY_POINTS, get_coordinates, get_max_energy_columns, normalize_keypoints
 

@@ -1,8 +1,8 @@
-
 # Инициализируем структуру ключевых точек тела
 import cv2
 import pandas as pd
 import mediapipe as mp
+
 
 
 def initialize_key_points():
@@ -57,16 +57,16 @@ def get_key_points_from_video(path_to_video):
       print(f"Видеофайл {path_to_video} успешно открыт.")
 
   #Создаем экземпляр модели BlazePose исходно настроенной на сложный поиск 33 точек одного человека
-  mp_drawing = mp.solutions.drawing_utils
+  # mp_drawing = mp.solutions.drawing_utils
   mp_pose = mp.solutions.pose
   pose = mp_pose.Pose(static_image_mode=False, model_complexity=0, smooth_landmarks=True, min_detection_confidence=0.5, min_tracking_confidence=0.5)
   # Инициализируем таблицу временных рядов по ключевым точкам
   keypoints_data=initialize_key_points()
 
   # Получаем тип кодека и расширение
-  fourcc = int(cap.get(cv2.CAP_PROP_FOURCC))
-  width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-  height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+  # fourcc = int(cap.get(cv2.CAP_PROP_FOURCC))
+  # width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+  # height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
   fps = cap.get(cv2.CAP_PROP_FPS)
 
   # print(f"Ширина: {width}, Высота: {height}, FPS: {fps}, Ext: {fourcc}")

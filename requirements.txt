@@ -42,8 +42,9 @@ python-dateutil==2.9.0.post0
 pytz==2024.1
 requests==2.32.3
 ruptures==1.1.9
-scikit-learn==1.5.1
-scikit-learn-extra==0.3.0
+# scikit-learn==1.5.1
+# scikit-learn-extra==0.3.0
+fastdtw==0.3.4
 scipy==1.14.0
 setuptools==72.1.0
 six==1.16.0
