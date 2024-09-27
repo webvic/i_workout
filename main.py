@@ -25,11 +25,14 @@ def workout(path_to_video, html_output_path, path_to_instructor_samples):
   df_keypoints = df_keypoints[mask].reset_index(drop=True)
 
   # ищем точки смены серий упражнений по спектральным характеристикам сигнала
-  change_points,max_energy_cols = get_change_points(df_keypoints)
+  # change_points,_ = get_change_points(df_keypoints)
+  len_workout=len(df_keypoints)
+  change_points=[0,75,len_workout-75,len_workout-1]
   # print('workout: len(df_keypoints),change_points',len(df_keypoints),change_points)
 
   # размечаем релевантные сегменты как "сильные"
-  is_strong_segment, metrics_df = classify_segments(df_keypoints, change_points)
+  # is_strong_segment,_ = classify_segments(df_keypoints, change_points)
+  is_strong_segment = [False,True,False]
   # print('workout: is_strong_segment, metrics_df',is_strong_segment, metrics_df)
 
   result_workout=[]
